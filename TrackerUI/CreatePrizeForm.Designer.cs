@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PlaceNumberValue = new System.Windows.Forms.TextBox();
             this.roundLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PrizePercentageValue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PrizeAmoutValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.PlaceNameValue = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CreatePrizeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,12 +51,12 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Create Prize";
             // 
-            // textBox1
+            // PlaceNumberValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 20);
-            this.textBox1.TabIndex = 9;
+            this.PlaceNumberValue.Location = new System.Drawing.Point(180, 84);
+            this.PlaceNumberValue.Name = "PlaceNumberValue";
+            this.PlaceNumberValue.Size = new System.Drawing.Size(153, 20);
+            this.PlaceNumberValue.TabIndex = 9;
             // 
             // roundLabel
             // 
@@ -68,12 +68,12 @@
             this.roundLabel.TabIndex = 8;
             this.roundLabel.Text = "Place Number";
             // 
-            // textBox2
+            // PrizePercentageValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 273);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 20);
-            this.textBox2.TabIndex = 11;
+            this.PrizePercentageValue.Location = new System.Drawing.Point(199, 273);
+            this.PrizePercentageValue.Name = "PrizePercentageValue";
+            this.PrizePercentageValue.Size = new System.Drawing.Size(134, 20);
+            this.PrizePercentageValue.TabIndex = 11;
             // 
             // label2
             // 
@@ -85,12 +85,12 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Prize Percentage";
             // 
-            // textBox3
+            // PrizeAmoutValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(180, 177);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 20);
-            this.textBox3.TabIndex = 13;
+            this.PrizeAmoutValue.Location = new System.Drawing.Point(180, 177);
+            this.PrizeAmoutValue.Name = "PrizeAmoutValue";
+            this.PrizeAmoutValue.Size = new System.Drawing.Size(153, 20);
+            this.PrizeAmoutValue.TabIndex = 13;
             // 
             // label3
             // 
@@ -102,12 +102,12 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Prize Amount";
             // 
-            // textBox4
+            // PlaceNameValue
             // 
-            this.textBox4.Location = new System.Drawing.Point(180, 129);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(153, 20);
-            this.textBox4.TabIndex = 15;
+            this.PlaceNameValue.Location = new System.Drawing.Point(180, 129);
+            this.PlaceNameValue.Name = "PlaceNameValue";
+            this.PlaceNameValue.Size = new System.Drawing.Size(153, 20);
+            this.PlaceNameValue.TabIndex = 15;
             // 
             // label4
             // 
@@ -129,30 +129,31 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "- OR -";
             // 
-            // button1
+            // CreatePrizeButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(94, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 40);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Create Prize";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CreatePrizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreatePrizeButton.Location = new System.Drawing.Point(109, 325);
+            this.CreatePrizeButton.Name = "CreatePrizeButton";
+            this.CreatePrizeButton.Size = new System.Drawing.Size(151, 48);
+            this.CreatePrizeButton.TabIndex = 18;
+            this.CreatePrizeButton.Text = "Create Prize";
+            this.CreatePrizeButton.UseVisualStyleBackColor = true;
+            this.CreatePrizeButton.Click += new System.EventHandler(this.CreatePrizeButton_Click);
             // 
             // CreatePrizeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 397);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CreatePrizeButton);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.PlaceNameValue);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.PrizeAmoutValue);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PrizePercentageValue);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PlaceNumberValue);
             this.Controls.Add(this.roundLabel);
             this.Controls.Add(this.label1);
             this.Name = "CreatePrizeForm";
@@ -165,15 +166,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PlaceNumberValue;
         private System.Windows.Forms.Label roundLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PrizePercentageValue;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox PrizeAmoutValue;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox PlaceNameValue;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CreatePrizeButton;
     }
 }
