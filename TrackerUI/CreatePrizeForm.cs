@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary;
+using TrackerLibrary.DataAccess;
+using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
@@ -17,23 +19,39 @@ namespace TrackerUI
         {
             InitializeComponent();
         }
-        
+
         private void CreatePrizeButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
-                PrizeModel model = new PrizeModel();
-                model.PlaceName = PlaceNameValue.Text;
-                
+                PrizeModel model = new PrizeModel(
+                    PlaceNameValue.Text,
+                    PlaceNumberValue.Text,
+                    PrizeAmoutValue.Text,
+                    PrizePercentageValue.Text);
 
+                foreach (IDataConnection db in GloblaConfig.Connections)
+                {
+                    db.CreatePrize(model);
+                }
+
+                PlaceNameValue.Text = "";
+                PlaceNumberValue.Text = "";
+                PrizeAmoutValue.Text = "0";
+                PrizePercentageValue.Text = "0";
             }
+            else
+            {
+                MessageBox.Show("Invalid Information entered.");
+            }
+
         }
 
         private bool ValidateForm()
         {
             bool OutPut = true;
 
-            if (int.TryParse(PlaceNameValue.Text, out int PlaceNumber))
+            if (!int.TryParse(PlaceNumberValue.Text, out int PlaceNumber))
             {
                 OutPut = false;
             }
@@ -47,17 +65,17 @@ namespace TrackerUI
             }
 
             bool PrizeAmountValid = decimal.TryParse(PrizeAmoutValue.Text, out decimal PrizeAmount);
-            bool PrizePercentageValid = int.TryParse(PrizePercentageValue.Text, out int PrizePercentage);
+            bool PrizePercentageValid = double.TryParse(PrizePercentageValue.Text, out double PrizePercentage);
 
-            if (PrizePercentageValid==false || PrizeAmountValid == false)
+            if (PrizePercentageValid == false || PrizeAmountValid == false)
             {
                 OutPut = false;
             }
-            if (PrizeAmount <=0 && PrizePercentage <=0)
+            if (PrizeAmount <= 0 && PrizePercentage <= 0)
             {
                 OutPut = false;
             }
-            if (PrizePercentage>100 || PrizePercentage<0)
+            if (PrizePercentage > 100 || PrizePercentage < 0)
             {
                 OutPut = false;
             }

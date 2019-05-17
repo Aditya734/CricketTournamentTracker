@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,16 +45,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GloblaConfig.cs" />
-    <Compile Include="IDataConnection.cs" />
-    <Compile Include="MatchupEntryModel.cs" />
-    <Compile Include="MatchupModel.cs" />
-    <Compile Include="PersonModel.cs" />
-    <Compile Include="PrizeModel.cs" />
+    <Compile Include="DataAccess\IDataConnection.cs" />
+    <Compile Include="Models\MatchupEntryModel.cs" />
+    <Compile Include="Models\MatchupModel.cs" />
+    <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\PrizeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLConnector.cs" />
-    <Compile Include="TeamModel.cs" />
-    <Compile Include="TextConnector.cs" />
-    <Compile Include="TournamentModel.cs" />
+    <Compile Include="DataAccess\SQLConnector.cs" />
+    <Compile Include="Models\TeamModel.cs" />
+    <Compile Include="DataAccess\TextConnector.cs" />
+    <Compile Include="Models\TournamentModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
