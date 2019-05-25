@@ -30,11 +30,8 @@ namespace TrackerUI
                     PrizeAmoutValue.Text,
                     PrizePercentageValue.Text);
 
-                foreach (IDataConnection db in GloblaConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
-
+                GloblaConfig.Connection.CreatePrize(model);
+               
                 PlaceNameValue.Text = "";
                 PlaceNumberValue.Text = "";
                 PrizeAmoutValue.Text = "0";
