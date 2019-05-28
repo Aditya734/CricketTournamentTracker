@@ -11,22 +11,23 @@ namespace TrackerLibrary
     {
         // only methods inside the GlobalConfig class can set the value, But everyone can read the value.
         // List will hold anything that implement the IDataconnection interface.
-        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+        public static IDataConnection Connection { get; private set; }
         
 
-        public static void InitializeConnections(bool database, bool textfiles)
+        public static void InitializeConnections(DatabaseType db)
         {
-            if(database)
+          
+            if(db == DatabaseType.Sql)
             {
                 //TODO - setup the sql connector properly.
                 SQLConnector sql = new SQLConnector(); // created an instance of SQLconnector class
-                Connections.Add(sql); // Adding the connection instance to Connections List.
+                Connection=sql; // Adding the connection instance to Connections List.
             }
-            if(textfiles)
+            else if(db == DatabaseType.TextFile)
             {
                 //TODO - setup the TextFile connection properly.
                 TextConnector text = new TextConnector();
-                Connections.Add(text);
+                Connection= text;
             }
         }
     }
