@@ -14,6 +14,11 @@ namespace TrackerLibrary.Models
         public decimal PrizeAmount { get; set; }
         public double PrizePercentage { get; set; }
 
+        public PrizeModel()
+        {
+
+        }
+
         public PrizeModel(string placeName, string placeNumber, string prizeAmount, string prizePercentage)
         {
             PlaceName = placeName;

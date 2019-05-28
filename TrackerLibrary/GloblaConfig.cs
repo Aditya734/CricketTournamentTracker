@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,19 +17,23 @@ namespace TrackerLibrary
 
         public static void InitializeConnections(DatabaseType db)
         {
-          
             if(db == DatabaseType.Sql)
             {
                 //TODO - setup the sql connector properly.
                 SQLConnector sql = new SQLConnector(); // created an instance of SQLconnector class
-                Connection=sql; // Adding the connection instance to Connections List.
+                Connection = sql; // Adding the connection instance to Connections List.
             }
             else if(db == DatabaseType.TextFile)
             {
                 //TODO - setup the TextFile connection properly.
                 TextConnector text = new TextConnector();
-                Connection= text;
+                Connection = text;
             }
+        }
+
+        public static string CnnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString; //add reference Configuration manager.
         }
     }
 }
