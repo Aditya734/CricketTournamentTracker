@@ -31,7 +31,7 @@ namespace TrackerLibrary.DataAccess
                 var p = new DynamicParameters();
                 p.Add("@PlaceNumber", model.PlaceNumber);
                 p.Add("@PlaceName",model.PlaceName);
-                p.Add("@PrizeAmount", model.PrizeAmount);
+                p.Add("@PrizeAmount", model.PrizeAmount); 
                 p.Add("@PrizePercentage", model.PrizePercentage);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
